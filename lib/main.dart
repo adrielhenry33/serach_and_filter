@@ -55,6 +55,17 @@ List<Map<String , dynamic>> _foundUsers  = [];
     results = _allUsers;
   } else {
     results = _allUsers
+        //filtra a lista 
+        //user representa cada item da lista
+        //to lowercase serve para garantir que a lista
+        //não seja sensivel a maiusculas e minusculas 
+        //.contains verifica se o nome contém o que você digi
+        //tou de forma minuscula também  
+        //O método where() retorna um Iterable
+        // (uma coleção que pode ser percorrida
+        //, mas não é uma lista ainda).
+        //O .toList() converte esse Iterable em uma List,
+        // que é o que queremos para trabalhar normalmente no Flutter.
         .where((user) => user["name"]
             .toLowerCase()
             .contains(enteredKeyword.toLowerCase()))
@@ -78,6 +89,22 @@ List<Map<String , dynamic>> _foundUsers  = [];
           fontSize: 25
         ),
       ),
+      body:
+        Padding(padding: EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            SizedBox(height:20.0),
+            TextField(
+              decoration: InputDecoration(
+                label: Text("Search"),
+                suffixIcon: Icon(Icons.search),
+              ),
+            )
+          ],
+        ),
+      ),   
+        
+
     );
   }
 }
