@@ -24,3 +24,22 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  //
+  final List<Map<String , dynamic>> _allUsers  = [
+    {"id:": 1, "name" : "Adriel", "age": 25}
+  ]
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
